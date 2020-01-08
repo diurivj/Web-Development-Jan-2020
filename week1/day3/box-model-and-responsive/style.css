@@ -1,0 +1,48 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  padding: 20px;
+  width: 100vw;
+  height: 7vh;
+  background: peru;
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+#desk {
+  display: none;
+}
+
+#tabl {
+  display: none;
+}
+
+/* media queries */
+/* tablet */
+@media (min-width: 720px) {
+  #mobi {
+    display: none;
+  }
+  #tabl {
+    display: inline;
+  }
+}
+
+/* desktop */
+@media (min-width: 1080px) {
+  #desk {
+    display: inline;
+  }
+  #mobi {
+    display: none;
+  } 
+  #tabl {
+    display: none;
+  }
+}
