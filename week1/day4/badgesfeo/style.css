@@ -1,0 +1,20 @@
+header img {
+  width: 50px;
+}
+
+section>input[type="text"] {
+  border: 2px dashed #BADA55;
+}
+
+/* section input {
+  background-color: gray;
+} */
+
+input {
+  margin: 20px;
+}
+
+article:nth-child(odd),
+input:nth-child(odd) {
+  background-color: tomato;
+}
