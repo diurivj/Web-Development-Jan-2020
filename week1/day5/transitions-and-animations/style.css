@@ -1,0 +1,50 @@
+section {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 700px;
+  height: 700px;
+}
+
+section div:first-child {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 200px;
+  background: #bad445;
+  animation: myanimation 3s ease-in-out 1s infinite;
+}
+
+section div:last-child {
+  width: 200px;
+  height: 200px;
+  background: peru;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 2s ease-in-out;
+}
+
+section div:last-child:hover {
+  width: 100px;
+  height: 100px;
+  background: yellow;
+}
+
+@keyframes myanimation {
+  /* we can have as many keyframes as we want */
+  0% {
+    background: red;
+  }
+
+  50% {
+    background: #bad445;
+    transform: rotate(45deg);
+    border-radius: 50%;
+  }
+
+  100% {
+    background: red;
+  }
+}
