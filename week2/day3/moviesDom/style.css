@@ -1,0 +1,22 @@
+input {
+  display: block;
+}
+
+#movies {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.movie {
+  width: 30%;
+  background-color: wheat;
+  padding: 5px;
+  height: 300px;
+}
+
+.cartel {
+  width: 100%;
+  height: 50%;
+  object-fit: cover;
+}

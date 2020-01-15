@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Movies</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <form>
+      <input type="text" name="title" id="title" placeholder="title" />
+      <input type="text" name="title" id="image" placeholder="image" />
+      <input type="submit" value="Add" />
+    </form>
+    <section id="movies">
+      <article class="movie">
+        <img
+          src="https://cinemarevius.files.wordpress.com/2014/10/enhanced-buzz-wide-384-1406873867-8.jpg"
+          alt="gone girl"
+          class="cartel"
+        />
+        <p>Gone girl</p>
+        <p>rating: <span>1</span></p>
+        <button onclick="updateRating(0, '-')">-</button
+        ><button onclick="updateRating(0, '+')">+</button>
+      </article>
+      <article class="movie">
+        <img
+          src="http://contenidos.enter.co/custom/uploads/2015/08/limitless-bradley-cooper.jpg"
+          alt="gone girl"
+          class="cartel"
+        />
+        <p>Gone girl</p>
+        <p>rating: <span>5</span></p>
+        <button onclick="updateRating(1, '-')">-</button
+        ><button onclick="updateRating(1, '+')">+</button>
+      </article>
+    </section>
+    <script src="script.js"></script>
+  </body>
+</html>
