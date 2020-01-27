@@ -1,0 +1,17 @@
+{
+  "name": "miprimerproyectodenode",
+  "version": "1.0.0",
+  "description": "mi primer proyecto de nodejs",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [
+    "diego",
+    "diurivj"
+  ],
+  "author": "Diurivj",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^3.0.0"
+  }
+}
