@@ -1,0 +1,25 @@
+.home__container {
+  margin-top: 100px;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+}
+
+.home__container img {
+  width: 50%;
+}
+
+.gallery__container {
+  width: 100vw;
+  height: 90vh;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.gallery__container .card {
+  width: 500px;
+}

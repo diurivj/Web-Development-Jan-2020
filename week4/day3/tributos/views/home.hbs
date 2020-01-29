@@ -1,0 +1,11 @@
+<h1>Foods</h1>
+
+{{#if err}}
+<h2 style="color: red;">{{err}}</h2>
+{{/if}}
+
+<ul>
+  {{#each foods as |food|}}
+  {{> foods food}}
+  {{/each}}
+</ul>

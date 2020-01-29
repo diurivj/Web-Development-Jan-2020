@@ -1,0 +1,32 @@
+<h1>{{name}}</h1>
+{{!-- helpers de HBS --}}
+{{#if isAlive}}
+<p>{{born}} - ????</p>
+{{else}}
+<p>{{born}} - {{died}}</p>
+{{/if}}
+
+<h2>Awards</h2>
+
+{{!-- forEach((award) => ...) --}}
+{{#each awards as |award|}}
+<p> (x{{award.quantity}}) {{award.name}}</p>
+{{/each}}
+
+{{!-- for in --}}
+{{!-- {{#each attributes}}
+{{#if @first}}
+<p>Esto fue lo primero</p>
+{{else  if @last}}
+<p>Esto fue lo ultimo</p>
+{{else}}
+<p>{{@key}}: {{this}}</p>
+{{/if}}
+{{/each}} --}}
+
+{{!-- para acceder a un elemento de un array es .[] --}}
+{{!-- <p>{{awards.[0].name}}</p> --}}
+
+{{#unless shoe}}
+Calzaba bien grande...
+{{/unless}}

@@ -1,0 +1,16 @@
+<div class="card mb-3">
+  <img src={{image}} class="card-img-top" alt="kobe">
+  <div class="card-body">
+    <h5 class="card-title">{{name}}</h5>
+    <p class="card-text">{{description}}</p>
+    <p class="card-text">
+      <small class="text-muted">
+        {{#if date}}
+        {{date}}
+        {{else}}
+        Unknown
+        {{/if}}
+      </small>
+    </p>
+  </div>
+</div>
