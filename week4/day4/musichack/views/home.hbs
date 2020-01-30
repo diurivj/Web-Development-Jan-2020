@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  {{!-- <h1>Bienvenido</h1>
+
+  <form action="/search" method="GET">
+    <label for="">City</label>
+    <input type="text" name="city" id="">
+    <label for="">Start-Date</label>
+    <input type="date" name="start-date" id="">
+    <label for="">End-Date</label>
+    <input type="date" name="end-date" id="">
+    <button type="submit">SEARCH</button>
+  </form>
+
+  <form action="/login" method="POST">
+    <label for="first-name-input">First Name:</label>
+    <input id="first-name-input" type="text" name="firstName">
+    <label for="password">password:</label>
+    <input id="password" type="password" name="password">
+
+    <input type="submit" value="Save Name">
+  </form> --}}
+
+  <h1>Spotifake</h1>
+  <ul>
+    {{#each artists}}
+    <li>{{this.name}} -
+      <a href="/update-artist/{{this._id}}">✏</a> -
+      <a href="/delete-artist/{{this._id}}">🚽</a>
+      Albums:
+      {{#each this.albums}}
+      - {{this.name}}
+      {{/each}}
+
+    </li>
+
+    {{/each}}
+  </ul>
+</body>
+
+</html>

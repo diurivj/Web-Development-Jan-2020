@@ -1,0 +1,13 @@
+<h1>Create new album</h1>
+
+<form action="/create-album" method="post">
+  <input type="text" name="name" placeholder="name"><br>
+  <input type="text" name="genre" placeholder="genre"><br>
+  <input type="text" name="image" placeholder="image"><br>
+  <select name="artistId">
+    {{#each artists}}
+    <option value="{{this._id}}">{{this.name}}</option>
+    {{/each}}
+  </select>
+  <input type="submit" value="create album">
+</form>
