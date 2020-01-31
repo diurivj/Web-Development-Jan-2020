@@ -1,0 +1,15 @@
+<section class="form__container">
+  <h1>{{action}}</h1>
+  <h2>{{err}}</h2>
+  <form action="/{{action}}" method="POST">
+    {{#if register}}
+    <input required type="text" name="name" placeholder="Name">
+    {{/if}}
+    <input required type="email" name="email" placeholder="Email">
+    <input required type="password" name="password" placeholder="Password">
+    {{#if register}}
+    <input required type="password" name="password_verify" placeholder="Repeat Password">
+    {{/if}}
+    <input type="submit" value="{{action}}">
+  </form>
+</section>
