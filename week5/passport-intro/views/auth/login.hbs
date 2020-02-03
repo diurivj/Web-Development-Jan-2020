@@ -1,0 +1,29 @@
+<h2>Login</h2>
+
+<form action="/login" method="POST" id="form-container">
+  <label for="email">Email</label>
+  <input id="email" type="email" name="email" placeholder="kanye@west.com" />
+  <br /><br />
+  <label for="password">Password</label>
+  <input id="password" type="password" name="password" placeholder="Your password" />
+
+  {{#if message}}
+  <div class="bg-danger text-light">{{ message }}</div>
+  {{/if}}
+  <br><br>
+
+  <button>Login</button>
+
+  <p class="account-message">
+    or register
+    <a href="/signup">Signup</a>
+  </p>
+</form>
+<br>
+<b>- or -</b>
+<br>
+<a href="/auth/slack"><button class="btn btn-info"><i class="fab fa-slack"></i> Slack</button></a>
+<br>
+<b>- or -</b>
+<br>
+<a href="/auth/google"><button class="btn btn-danger"><i class="fab fa-google"></i> Google</button></a>

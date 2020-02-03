@@ -1,0 +1,24 @@
+<h2>Signup</h2>
+
+<form action="/signup" method="POST" id="form-container">
+  <label for="name">Name</label>
+  <input id="name" type="text" name="name" placeholder="Kanye" />
+  <br /><br />
+  <label for="email">Email</label>
+  <input id="email" type="email" name="email" placeholder="kanye@west.com" />
+  <br /><br />
+  <label for="password">Password</label>
+  <input id="password" type="password" name="password" placeholder="Your password" />
+
+  {{#if message}}
+  <div class="error-message">{{ message }}</div>
+  {{/if}}
+  <br><br>
+
+  <button>Create account</button>
+
+  <p class="account-message">
+    Do you already have an account?
+    <a href="/login">Login</a>
+  </p>
+</form>
