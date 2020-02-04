@@ -1,0 +1,20 @@
+<section class="form__section">
+  <h1 class="title">Add place</h1>
+  <form class="form" action="/create" method="POST">
+    <input class="input" name="name" type="text" placeholder="Place name" />
+    <div class="select" style="width: 100%;">
+      <select name="placeType" style="width: 100%;">
+        <option value="">Select type</option>
+        {{#each options}}
+        <option value="{{this}}">{{this}}</option>
+        {{/each}}
+      </select>
+    </div>
+    <input class="input" name="author" type="text" placeholder="Author" />
+    <div id="map"></div>
+    <button class="button">Create</button>
+    <input type="text" name="address" hidden>
+    <input type="text" name="latitude" hidden>
+    <input type="text" name="longitude" hidden>
+  </form>
+</section>

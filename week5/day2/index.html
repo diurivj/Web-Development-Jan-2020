@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v3.1.0/mapbox-gl-geocoder.css"
+      type="text/css"
+    />
+    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v3.1.0/mapbox-gl-geocoder.min.js"></script>
+    <script src="https://api.mapbox.com/mapbox-gl-js/v1.7.0/mapbox-gl.js"></script>
+    <link
+      href="https://api.mapbox.com/mapbox-gl-js/v1.7.0/mapbox-gl.css"
+      rel="stylesheet"
+    />
+    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v3.1.3/mapbox-gl-directions.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v3.1.3/mapbox-gl-directions.css"
+      type="text/css"
+    />
+    <title>My first map</title>
+  </head>
+  <body>
+    <div id="map" style="width: 800px; height: 400px;"></div>
+    <script>
+      mapboxgl.accessToken =
+        'pk.eyJ1IjoiZGl1cml2aiIsImEiOiJjanAxdjA2cTQwMGp1M2tvYzZmZGp3bWc3In0.4cZEyLkU2ikqx_wb4A1z8A'
+      const map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v11',
+        center: [-99.1622182, 19.4211955],
+        zoom: 15
+      })
+
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(position => {
+          const center = [position.coords.longitude, position.coords.latitude]
+          new mapboxgl.Marker().setLngLat(center).addTo(map)
+        })
+      } else {
+        alert('Tu navegador es viejo')
+      }
+
+      const geoCoder = new MapboxGeocoder({
+        accessToken: mapboxgl.accessToken,
+        countries: 'mx'
+      })
+
+      map.addControl(geoCoder)
+
+      // const marker = new mapboxgl.Marker({
+      //   color: 'blue',
+      //   draggable: true
+      // })
+      //   .setLngLat([-99.1622182, 19.4211955])
+      //   .addTo(map)
+      // const marker = new mapboxgl.Marker()
+
+      // function changeMarker() {
+      //   const time = Date.now()
+      //   const radius = 20
+      //   marker.setLngLat([
+      //     -99 + Math.sin((time / 10000) * radius),
+      //     19 + Math.cos((time / 10000) * radius)
+      //   ])
+      //   marker.addTo(map)
+      // }
+
+      // setInterval(changeMarker, 1000 / 60)
+    </script>
+  </body>
+</html>
