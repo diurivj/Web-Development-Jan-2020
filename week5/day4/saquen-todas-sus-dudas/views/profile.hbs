@@ -1,0 +1,18 @@
+<h1>Welcome my lord, {{name}}</h1>
+
+<img src="{{photoURL}}" alt="profile_picture" />
+
+<form action="/profile" method="POST" enctype="multipart/form-data">
+  <input type="file" name="photoURL" hidden accept="image/*" />
+  <input type="submit" value="Update photo">
+</form>
+
+<button>
+  <a href="/logout">Logout</a>
+</button>
+
+<script>
+  const inputEl = document.querySelector('input[type="file"]')
+  const imgEl = document.querySelector('img[alt="profile_picture"]')
+  imgEl.onclick = () => inputEl.click()
+</script>

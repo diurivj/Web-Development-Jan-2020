@@ -1,0 +1,22 @@
+<section class="home__container">
+  <form action="/signup" method="POST">
+    <h2>Sign up</h2>
+    <label>Name</label>
+    <input type="text" name="name" placeholder="Kanye" required>
+    <label>Email</label>
+    <input type="email" name="email" placeholder="kanye@west.com" required>
+    <label>Password</label>
+    <input type="password" name="password" required>
+    <input type="submit" value="Signup">
+    <p class="msg">{{msg}}</p>
+    <p class="err">{{err}}</p>
+  </form>
+  <form action="/login" method="POST">
+    <h2>Log in</h2>
+    <label>Email</label>
+    <input type="email" name="email" placeholder="kanye@west.com" required>
+    <label>Password</label>
+    <input type="password" name="password" required>
+    <input type="submit" value="Login">
+  </form>
+</section>

@@ -13,7 +13,7 @@ const geoCoder = new MapboxGeocoder({
 
 map.addControl(geoCoder)
 
-map.on('moveend', r => {
+map.on('moveend', () => {
   const { lng, lat } = map.getCenter()
   if (lng !== 0 || lat !== 0) {
     new mapboxgl.Marker().setLngLat([lng, lat]).addTo(map)
