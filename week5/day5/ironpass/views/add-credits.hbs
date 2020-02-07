@@ -1,0 +1,21 @@
+<h1 class="is-size-1">Add Credits</h1>
+
+<p class="is-size-3">Credits: {{user.credits}}</p>
+
+<form action="/credits" method="post">
+  <div class="field">
+    <p class="control has-icons-left has-icons-right">
+      <input class="input is-large" type="number" placeholder="Credits" name="credits" required>
+      <span class="icon is-small is-left">
+        <i class="fas fa-money-bill"></i>
+      </span>
+    </p>
+  </div>
+  <div class="field">
+    <p class="control">
+      <button class="button is-success">
+        Add Credits
+      </button>
+    </p>
+  </div>
+</form>

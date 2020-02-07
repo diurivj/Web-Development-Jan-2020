@@ -1,0 +1,37 @@
+<h1 class="is-size-1">Bienvenido a IronPass</h1>
+<p>Acá puedes comprar tus boletos para los mejores evento.</p>
+
+
+<div class="columns is-desktop">
+  {{#each concerts}}
+  <div class="column is-4">
+    <div class="card">
+      <div class="card-image">
+        <figure class="image is-4by3">
+          <img src="{{this.cartel}}" alt="Placeholder image">
+        </figure>
+      </div>
+      <div class="card-content">
+        <div class="media">
+          <div class="media-content">
+            <p class="title is-4">{{this.name}}</p>
+            <p class="subtitle is-6">{{this.description}}</p>
+            <p class="subtitle is-6">${{this.price}}</p>
+            <p class="subtitle is-6">available tickets: {{this.availableTickets}}</p>
+            <p class="subtitle is-6"><span class="tag is-primary">{{this.genre}}</span></p>
+            <p class="subtitle is-6"><time datetime="2016-1-1">{{this.date}}</time></span></p>
+          </div>
+        </div>
+        <footer class="card-footer">
+          <p class="card-footer-item">
+            <span>
+              <a href="/buy-ticket/{{this.id}}">Buy ticket</a>
+            </span>
+          </p>
+        </footer>
+      </div>
+    </div>
+  </div>
+  {{/each}}
+
+</div>

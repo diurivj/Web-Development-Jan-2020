@@ -1,0 +1,116 @@
+<h1 class="is-size-1">Create Concert</h1>
+<form action="/create-concert" method="post" enctype="multipart/form-data">
+  <div class="field">
+    <p class="control has-icons-left has-icons-right">
+      <input class="input" type="text" placeholder="Name" name="name" required>
+      <span class="icon is-small is-left">
+        <i class="fas fa-ticket-alt"></i>
+      </span>
+    </p>
+  </div>
+  <div class="field">
+    <p class="control has-icons-left has-icons-right">
+      <div class="select">
+        <select name="genre" id="genre">
+          <option value="METAL"> METAL</option>
+          <option value="INDIE"> INDIE</option>
+          <option value="CUMBIA"> CUMBIA</option>
+          <option value="K-POP"> POP</option>
+          <option value="REGGAEPOOP"> REGGAEPOOP</option>
+          <option value="SKA"> SKA</option>
+          <option value="JAZZ"> JAZZ</option>
+          <option value="ROCK"> ROCK</option>
+          <option value="HARDROCK"> HARDROCK</option>
+          <option value="ELECTRONICA"> ELECTRONICA</option>
+          <option value="CLASICA"> CLASICA</option>
+        </select>
+      </div>
+    </p>
+  </div>
+  <div class="field">
+    <p class="control has-icons-left has-icons-right">
+      <input class="input" type="date" placeholder="Date" name="date" required>
+      <span class="icon is-small is-left">
+        <i class="fas fa-calendar"></i>
+      </span>
+    </p>
+  </div>
+  <div class="field">
+    <p class="control has-icons-left has-icons-right">
+      <input class="input" type="number" placeholder="Capacity" name="capacity" required>
+      <span class="icon is-small is-left">
+        <i class="fas fa-user"></i>
+      </span>
+    </p>
+  </div>
+
+  <div class="field">
+    <p class="control has-icons-left has-icons-right">
+      <input class="input" type="number" placeholder="Price" name="price" required>
+      <span class="icon is-small is-left">
+        <i class="fas fa-money-bill"></i>
+      </span>
+    </p>
+  </div>
+  <div class="field">
+    <p class="control has-icons-left has-icons-right">
+      <input class="input" type="text" placeholder="Description" name="description" required>
+      <span class="icon is-small is-left">
+        <i class="fas fa-money-bill"></i>
+      </span>
+    </p>
+  </div>
+  <div class="file is-boxed">
+    <label class="file-label">
+      <input class="file-input" type="file" name="cartel">
+      <span class="file-cta">
+        <span class="file-icon">
+          <i class="fas fa-upload"></i>
+        </span>
+        <span class="file-label">
+          Choose a file…
+        </span>
+      </span>
+    </label>
+  </div>
+  <br>
+  <div id='map' style='width: 400px; height: 300px;'></div>
+  <input type="text" name="longitude" id="longitude" style="display: none;">
+  <input type="text" name="latitude" id="latitude" style="display: none;">
+
+  <div class="field">
+    <p class="control">
+      <button class="button is-success">
+        Create concert
+      </button>
+    </p>
+  </div>
+</form>
+
+
+<script>
+  mapboxgl.accessToken = 'pk.eyJ1Ijoiam9zc2R6IiwiYSI6ImNrMGR4cWk2djBhbWszY3F2b3N4bDBqZTUifQ.ByHk_m_uZOjYaruW6T8Wig';
+
+  var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/streets-v11',
+    center: [-79.4512, 43.6568],
+    zoom: 13
+  });
+
+  map.addControl(
+    new MapboxGeocoder({
+      accessToken: mapboxgl.accessToken,
+      mapboxgl: mapboxgl
+    })
+  );
+
+  map.on("moveend", () => {
+    const { lng, lat } = map.getCenter()
+    const $longitude = document.querySelector('#longitude')
+    const $latitude = document.querySelector('#latitude')
+
+    $longitude.value = lng
+    $latitude.value = lat
+  })
+</script>
