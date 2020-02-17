@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>First React</title>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+  <script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+  <script src="https://unpkg.com/react@16.12.0/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@16.12.0/umd/react-dom.development.js"></script>
+  <script type="text/babel">
+    const root = document.querySelector('#root')
+    // const el = document.createElement('h2')
+    // el.innerText = Date.now()
+    // root.appendChild(el)
+
+    // react del normalito, que nadie haceeeeee ❌
+    const reactEl = React.createElement('div', {
+      // props object
+      className: 'container',
+      children: [
+        React.createElement('h2', {
+          children: 'Que pedal'
+        }),
+        Date.now()
+      ]
+    })
+
+    // jsx ✅
+    let counter = 0
+    const el = (
+      <div className="container">
+        <h2>que pedal</h2>
+        <p>Count: {counter}</p>
+      </div>
+    )
+
+    ReactDOM.render(el, root)
+  </script>
+</html>
