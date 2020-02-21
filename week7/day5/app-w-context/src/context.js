@@ -1,4 +1,5 @@
 import React, { Component, createContext } from 'react'
+import { withRouter } from 'react-router-dom'
 import AUTH_SERVICE from './services/auth'
 
 export const MyContext = createContext()
@@ -40,7 +41,7 @@ class MyProvider extends Component {
     }))
   }
 
-  handleSignupSubmit = (e, cb) => {
+  handleSignupSubmit = e => {
     e.preventDefault()
     const { name, email, password } = this.state.formSignup
     AUTH_SERVICE.signup({ name, email, password })
@@ -54,7 +55,7 @@ class MyProvider extends Component {
           }
         }))
         alert(':)')
-        cb()
+        this.props.history.push('/login')
       })
       .catch(() => {
         alert(':(, chaleee')
@@ -94,7 +95,7 @@ class MyProvider extends Component {
           loggedUser: data.user,
           isLoggedIn: true
         }))
-        // this.props.history.push('/profile')
+        this.props.history.push('/profile')
       })
       .catch(() => {
         alert(':(, chaleee')
@@ -127,4 +128,4 @@ class MyProvider extends Component {
   }
 }
 
-export default MyProvider
+export default withRouter(MyProvider)

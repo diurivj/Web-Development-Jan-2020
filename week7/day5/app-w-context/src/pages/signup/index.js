@@ -8,21 +8,14 @@ import {
   Input,
   Icon
 } from '@chakra-ui/core'
-import { useHistory } from 'react-router-dom'
 import Form from '../../components/Form'
 
 function Signup() {
-  const redirect = useHistory()
   return (
     <MyContext.Consumer>
       {context => (
         <Flex w="100vw" h="90vh" align="center" justify="center">
-          <Form
-            submit={e =>
-              context.handleSignupSubmit(e, () => redirect('/login'))
-            }
-            title="Signup"
-          >
+          <Form submit={context.handleSignupSubmit} title="Signup">
             <FormControl isRequired>
               <InputGroup>
                 <InputLeftAddon children={<Icon name="user" />} />

@@ -5,6 +5,7 @@ import MyProvider from './context'
 import { ThemeProvider, CSSReset } from '@chakra-ui/core'
 import theme from './theme'
 import * as serviceWorker from './serviceWorker'
+import { BrowserRouter } from 'react-router-dom'
 
 function WithTheme() {
   return (
@@ -17,9 +18,11 @@ function WithTheme() {
 
 function WithContext() {
   return (
-    <MyProvider>
-      <WithTheme />
-    </MyProvider>
+    <BrowserRouter>
+      <MyProvider>
+        <WithTheme />
+      </MyProvider>
+    </BrowserRouter>
   )
 }
 
